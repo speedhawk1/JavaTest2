@@ -12,9 +12,9 @@ public class JavaTest2_4Calender {
         int msum = input.nextInt();
         int dsum = input.nextInt();
         int a = 0;
-        int b=0;
-
-        for (int y = 1900; y<ysum ; ++y){
+        int b = 0;
+        int n = a + b + dsum;
+        for (int y = 1900; y < ysum; ++y) {
             if (y % 4 == 0 && y % 100 != 0) {
                 a += 366;
             } else {
@@ -31,17 +31,21 @@ public class JavaTest2_4Calender {
                     break;
                 case 2:
                     if (ysum % 4 == 0 && ysum % 100 != 0) {
-                        b+= 28;
+                        b += 28;
                     } else {
-                        b+=29;
+                        b += 29;
                     }
                     break;
-                    default:
-                        b+=31;
-                        break;
+                default:
+                    b += 31;
+                    break;
             }
         }
-        System.out.println("总天数为"+(a+b+dsum));
-
+        int x = n % 7;
+        if (x == 0) {
+            System.out.println("今天是星期日");
+        } else {
+            System.out.println("今天是星期" + "x");
+        }
     }
 }
